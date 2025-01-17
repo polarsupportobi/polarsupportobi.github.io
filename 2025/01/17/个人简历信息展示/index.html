@@ -173,5 +173,30 @@
             </td>
         </tr>
     </table>
+
+    <script>
+
+        // 新建interval，每隔一秒运行refresh方法
+        let countDownInterval = setInterval("refresh()",1000);
+        
+        // 倒计时开始的时间
+        let count = 5;
+        
+        // refresh方法
+        function refresh(){
+            //倒计时减少1s
+            count--;
+            // 将页面上的倒计时数字更改为新的count
+            document.getElementById("countDownNum").innerText = count;
+            
+            // 如果倒计时减少至0，清除interval并跳转至指定页面
+            if(count == 0){
+                // 清除interval
+                clearInterval(countDownInterval);
+                // 跳转至指定页面
+                location.href = "www.baidu.com";
+            }
+        }
+    </script>
 </body>
 </html>
