@@ -32,6 +32,21 @@
             // 当DOM准备就绪后，你的代码将在这里执行
             console.log('jQuery is loaded and ready to use!');
           });
+
+
+      
+
+          /*高德*/
+          var mapUrl_gd ="http://uri.amap.com/marker?position=108.958486,34.271454&name="+inform.orgName+"&src=yellowpage&coordinate=gaode&callnative=1";
+           $("#mapBg .mapTab .mapBtn_g").attr("href",mapUrl_gd);
+          
+          /*腾讯*/
+          var mapUrl_tx = "http://apis.map.qq.com/uri/v1/marker?marker=coord:34.271454,108.958486;title:"+inform.orgName+";addr:"+inform.orgAddress+"&referer=yellowpage"
+           $("#mapBg .mapTab .mapBtn_t").attr("href",mapUrl_tx);
+          
+          /*百度*/
+          var mapUrl_bd ="http://api.map.baidu.com/marker?location=34.271454,108.958486&title="+inform.orgName+"&content="+inform.orgAddress+"&output=html&src=yellowpage";
+          $("#mapBg .mapTab .mapBtn_b").attr("href",mapUrl_bd);
         
     </script>
 </body>
