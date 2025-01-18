@@ -1,9 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>打开高德地图</title>
-</head>
+    <meta charset="utf-8">
+    <title>HTML5唤起高德地图APP示例</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    </head>
 <body>
-    <a href="androidamap://">打开高德地图</a>
+
+
+<div id="mapBg">
+    <div class="mapTab">
+        <a href="" class="mapBtn_g"><div>高德地图</div></a>
+        <a href="" class="mapBtn_t"><div>腾讯地图</div></a>
+        <a href="" class="mapBtn_b"><div>百度地图</div></a>
+    </div>
+</div>
+    <script>
+        //根据手机系统获取scheme
+        function getScheme(){
+           let agent = navigator.userAgent.toLowerCase();
+           if(agent.indexOf("iphone") != -1 || agent.indexOf("ipad") != -1){
+               return "iosamap://path";
+           }else{
+               return "amapuri://route/plan";
+           }
+        }
+        
+    </script>
 </body>
 </html>
