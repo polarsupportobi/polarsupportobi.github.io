@@ -43,12 +43,12 @@
           $("#mapBg .mapTab .mapBtn_g").attr("href",mapUrl_gd);
           
           /*腾讯*/
-          //var mapUrl_tx = "http://apis.map.qq.com/uri/v1/marker?marker=coord:34.271454,108.958486;title:"+inform.orgName+";addr:"+inform.orgAddress+"&referer=yellowpage"
-          // $("#mapBg .mapTab .mapBtn_t").attr("href",mapUrl_tx);
+          var mapUrl_tx = "http://apis.map.qq.com/uri/v1/marker?marker=coord:34.271454,108.958486;title:"+"世界之窗"+";addr:"+"34.271454,108.958486"+"&referer=yellowpage"
+          $("#mapBg .mapTab .mapBtn_t").attr("href",mapUrl_tx);
           
           /*百度*/
-          //var mapUrl_bd ="http://api.map.baidu.com/marker?location=34.271454,108.958486&title="+inform.orgName+"&content="+inform.orgAddress+"&output=html&src=yellowpage";
-          //$("#mapBg .mapTab .mapBtn_b").attr("href",mapUrl_bd);
+          var mapUrl_bd ="http://api.map.baidu.com/marker?location=34.271454,108.958486&title="+"世界之窗"+"&content="+"34.271454,108.958486"+"&output=html&src=yellowpage";
+          $("#mapBg .mapTab .mapBtn_b").attr("href",mapUrl_bd);
         
 
           // 设置href属性
