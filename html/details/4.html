@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>唤起高德地图</title>
+</head>
+<body>
+    <button id="openAmapBtn">打开高德地图</button>
+
+    <script>
+        function openAmap(latitude, longitude, name) {
+            var url = "amap://point?latitude=" + latitude + "&longitude=" + longitude + "&name=" + name;
+            window.location.href = url;
+        }
+
+        // 事件监听
+        document.getElementById("openAmapBtn").addEventListener("click", function() {
+            openAmap(39.90872, 116.39748, "天安门");
+        });
+    </script>
+</body>
+</html>
