@@ -1,33 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>HTML5唤起高德地图APP示例</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <script src="https://webapi.amap.com/maps？v=2.0&key=你的key&plugin=AMap.Geolocation" type="text/javascript"></script>
+    <title>打开高德地图</title>
 </head>
 <body>
-    <script>
-        //根据手机系统获取scheme
-        function getScheme(){
-           let agent = navigator.userAgent.toLowerCase();
-           if(agent.indexOf("iphone") != -1 || agent.indexOf("ipad") != -1){
-               return "iosamap://path";
-           }else{
-               return "amapuri://route/plan";
-           }
-        }
-        let geolocation = new AMap.Geolocation();
-        geolocation.getCurrentPosition(function(status,result){
-            if(status=="complete"){
-                let { lat,lng } = result
-                let alat,alng,address;
-                let app_url = `${getScheme()}?sourceApplication=com.mzwu.www&slat=${lat}&slon=${lng}&sname=我的位置&dlat=${alat}&dlon=${alng}&dname=${address}&dev=0&t=0`;
-                window.location.href = app_url
-            }else{
-                alert('打开高德地图失败，请检查您的手机设置')
-            }
-        })
-    </script>
+    <a href="androidamap://">打开高德地图</a>
 </body>
 </html>
