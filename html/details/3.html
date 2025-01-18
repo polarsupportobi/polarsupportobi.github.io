@@ -15,6 +15,8 @@
         <a href="" class="mapBtn_t"><div>腾讯地图</div></a>
         <a href="" class="mapBtn_b"><div>百度地图</div></a>
     </div>
+
+    <a id="myLink">点击我</a>
 </div>
     <script>
         //根据手机系统获取scheme
@@ -48,6 +50,9 @@
           var mapUrl_bd ="http://api.map.baidu.com/marker?location=34.271454,108.958486&title="+inform.orgName+"&content="+inform.orgAddress+"&output=html&src=yellowpage";
           $("#mapBg .mapTab .mapBtn_b").attr("href",mapUrl_bd);
         
+
+          // 设置href属性
+        $('#myLink').attr('href', 'https://www.baidu.com');
     </script>
 </body>
 </html>
