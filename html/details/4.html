@@ -6,6 +6,9 @@
 <body>
     <button id="openAmapBtn">打开高德地图</button>
 
+
+    <p><a href="baidumap://map/direction?mode=[transit:公交,driving:驾车]&origin=39.916979519873,116.4100495056&destination=39.980683,116.302title=目的位置&content=百度奎科大厦" class="map">查看地图公交/驾车去这里 导航app</a></p>
+
     <script>
         function openAmap(latitude, longitude, name) {
             var url = "amap://point?latitude=" + latitude + "&longitude=" + longitude + "&name=" + name;
