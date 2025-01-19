@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF预览</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        iframe {
-            width: 80%;
-            height: 80%;
+        #pdf-viewer {
             border: 1px solid #ccc;
+            width: 100%;
+            height: 500px;
         }
     </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+    PDF 文件预览
+    <div id="pdf-viewer" style="width: 100%; height: 600px;">
+        <iframe id="pdf-frame" width="100%" height="100%"></iframe>
+    </div>
     
-    <embed id="pdfView" src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvYy8xOTRmYWFmNDBjZTVkNzcxL0VYSFg1UXowcWs4Z2dCbG1BQUFBQUFBQjlETmVCQWRiWW5BTG1EVERhMm5FNXc_ZT1zMzgyUnA.PDF#toolbar=1" type="application/pdf" width="100%" height="100%" />
+    <embed src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2IvYy8xOTRmYWFmNDBjZTVkNzcxL0VYSFg1UXowcWs4Z2dCbG1BQUFBQUFBQjlETmVCQWRiWW5BTG1EVERhMm5FNXc_ZT1zMzgyUnA.PDF" type="application/pdf" width="100%" height="600px" />
+    <script>
+       
 
-
+    </script>
 </body>
 </html>
