@@ -35,6 +35,16 @@
    
     myIframe.onload = function() {
         // 向iframe注入脚本
+        var script = 'document.querySelector("div").innerText = "Hello from inside the iframe!";';
+            var scriptEl = iframeDoc.createElement('script');
+            scriptEl.textContent = '(' + function() {
+                var div = document.createElement('div');
+                div.id = 'message';
+                document.body.appendChild(div);
+                // 执行你想要的操作
+                ' + script + '
+            } + ')();';
+            iframeDoc.body.appendChild(scriptEl);
        console.log(iframeDoc)
     };
 
