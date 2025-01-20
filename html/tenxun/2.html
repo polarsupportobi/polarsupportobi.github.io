@@ -25,31 +25,20 @@
 
 
   <script>
-    console.log("hello")
-    var myIframe = document.getElementById("myframe");
-    var iframeDoc = myIframe.contentDocument || iframe.contentWindow.document;
-    var script = myIframe.contentWindow.document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "randomshit.js";
-    myIframe.contentWindow.document.body.appendChild(script);
-   
-    myIframe.onload = function() {
-        // 向iframe注入脚本
-        var script = 'document.querySelector("div").innerText = "Hello from inside the iframe!";';
-            var scriptEl = iframeDoc.createElement('script');
-            scriptEl.textContent = '(' + function() {
-                var div = document.createElement('div');
-                div.id = 'message';
-                document.body.appendChild(div);
-                // 执行你想要的操作
-                ' + script + '
-            } + ')();';
-            iframeDoc.body.appendChild(scriptEl);
-       console.log(iframeDoc)
-    };
-
- 
-    console.log("end")
+    
+  // 获取浏览器窗口的宽度和高度
+  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  
+  // 设置iframe的宽度和高度
+  function setIframeSize(iframeId, width, height) {
+      var iframe = document.getElementById(iframeId);
+      if (iframe) {
+          iframe.style.width = width + 'px';
+          iframe.style.height = height + 'px';
+      }
+  }
+  setIframeSize('myframe', w, h);
   </script>
 </body>
 </html>
