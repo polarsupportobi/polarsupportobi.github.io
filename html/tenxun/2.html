@@ -8,20 +8,18 @@
 
 <style>
 
-
-  video {
-    width : 100%;
-    height: auto;
-  }
 </style>
 
 </head>
 
 <body>
+  <div>hello</div>
   <div id="container">
-    <iframe id="myframe" src="https://www.weiyun.com/document?fileId=470490155_2b1c0b1cf0a739ae12b58dcd423dce4a_a0c6804c-ea8f-4d06-835d-9da370f33ba4&officeType=xls&tdsourcetag=s_weiyun_file" width="100%" height="1024px"></iframe>
+    <!-- <iframe id="myframe"  marginheight="10" frameborder="0" scrolling="auto" src="https://www.weiyun.com/document?fileId=470490155_2b1c0b1cf0a739ae12b58dcd423dce4a_a0c6804c-ea8f-4d06-835d-9da370f33ba4&officeType=xls&tdsourcetag=s_weiyun_file" width="100%" height="2000px"></iframe> -->
 
   </div>
+  <p id="ww"></p>
+  <p id="hh"></p>
 
 
   <script>
@@ -29,6 +27,12 @@
   // 获取浏览器窗口的宽度和高度
   var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+  
+  var ww= document.getElementById("ww")
+  ww.textContent = w;
+  hh = document.getElementById("hh")
+  hh.textContent = h;
   
   // 设置iframe的宽度和高度
   function setIframeSize(iframeId, width, height) {
@@ -38,7 +42,7 @@
           iframe.style.height = height + 'px';
       }
   }
-  setIframeSize('myframe', w, h);
+ // setIframeSize('myframe', w, h);
   </script>
 </body>
 </html>
