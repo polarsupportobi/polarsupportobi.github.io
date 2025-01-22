@@ -18,7 +18,7 @@
 
 
   <div id="container">
-    <iframe id="myframe" frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="100%" height="1024px"></iframe>
+    <iframe id="myframe" onload="resizeIframe(this)" frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="90%" height="1024px"></iframe>
 
 
       
@@ -48,6 +48,14 @@
       }
 
      
+function resizeIframe(iframe) {
+  var iframeBody = iframe.contentDocument || iframe.contentWindow.document;
+  var html = iframeBody.documentElement.outerHTML;
+  var body = iframeBody.body;
+  var contentHeight = body.scrollHeight;
+  iframe.height = contentHeight + "px";
+
+
   </script>
   </div>
 </body>
