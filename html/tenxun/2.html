@@ -23,20 +23,27 @@
 
 
     <script>
-    // 设置iframe大小的函数
-  function resizeIframe() {
-    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var iframe = document.getElementById('myframe');
-    iframe.style.width = width *0.98+ 'px';
-    iframe.style.height = height + 'px';
-  }
-
-// 页面加载时调整iframe大小
-window.onload = resizeIframe;
-
-// 窗口大小改变时调整iframe大小
-window.onresize = resizeIframe;
+      function resizeIframe() {
+        var iframe = document.getElementById('myframe');
+        var viewportWidth = window.innerWidth;
+        var viewportHeight = window.innerHeight;
+        
+        // 减去一些边距或其他元素的高度以适应内容
+        var adjustedHeight = viewportHeight + 50; // 例如，减去50px的边距
+        
+        iframe.style.width = viewportWidth - 50 + 'px';
+        iframe.style.height = adjustedHeight + 'px'; // 根据需要调整高度
+    }
+    
+    // 页面加载完成后调整iframe大小
+    window.onload = function() {
+        resizeIframe();
+    };
+    
+    // 窗口大小改变时也调整iframe大小
+    window.onresize = function() {
+        resizeIframe();
+    };
     </script>
       
   <script>
