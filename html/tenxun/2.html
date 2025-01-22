@@ -8,19 +8,47 @@
 
 <style>
 
-
-  video {
-    width : 100%;
-    height: auto;
-  }
 </style>
 
 </head>
 
 <body>
-  <div id="container">
-    <iframe id="myframe" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="100%" height="1024px"></iframe>
 
+  <p id="text"></p>
+
+
+  <div id="container">
+    <iframe id="myframe" frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="100%" height="1024px"></iframe>
+
+
+      
+  <script>
+    
+
+
+    function isMobile() {
+      // 判断是否为移动设备
+          return (
+              typeof window.orientation !== "undefined" || // 判断是否存在window.orientation属性，此属性在移动设备上一般存在
+              navigator.userAgent.indexOf('IEMobile') !== -1 || // 判断是否为Windows Phone
+              navigator.userAgent.indexOf('iPhone') !== -1 || // 判断是否为iPhone
+              navigator.userAgent.indexOf('Android') !== -1 && navigator.userAgent.indexOf('Mobile') !== -1 || // 判断是否为Android手机
+              navigator.userAgent.indexOf('BlackBerry') !== -1 || // 判断是否为BlackBerry
+              navigator.userAgent.indexOf('Opera Mini') !== -1 // 判断是否为Opera Mini浏览器
+          );
+      }
+      
+      p = document.getElementById("text")
+      if (isMobile()) {
+          console.log('移动端');
+          p.textContent = '移动端'
+      } else {
+          console.log('PC端');
+          p.textContent = 'PC端'
+      }
+
+     
+  </script>
   </div>
 </body>
 </html>
