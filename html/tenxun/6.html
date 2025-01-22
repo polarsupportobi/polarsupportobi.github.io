@@ -30,10 +30,30 @@ video {
 
 <body>
   <div id="container">
-    <video src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3YvYy8xOTRmYWFmNDBjZTVkNzcxL0VSOHhZRWJLTjJ0QnM0UG1tQkxRM3owQnA4d05GR3ljVlYtTG00YXFXU3VsTlE_ZT1vVjNpN0Y.mp4"    muted autoplay playsinline controls>
+    <video id="v_play" src="https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3YvYy8xOTRmYWFmNDBjZTVkNzcxL0VSOHhZRWJLTjJ0QnM0UG1tQkxRM3owQnA4d05GR3ljVlYtTG00YXFXU3VsTlE_ZT1vVjNpN0Y.mp4"    muted autoplay playsinline controls>
       Your browser does not support the video tag.
     </video>
 
   </div>
+
+  <script>
+    function resizeIframe() {
+        var iframe = document.getElementById('v_play');
+        var viewportWidth = window.innerWidth;
+        var viewportHeight = window.innerHeight;
+        
+        // 减去一些边距或其他元素的高度以适应内容
+        var adjustedHeight = viewportHeight; // 例如，减去50px的边距
+        
+        iframe.style.width = viewportWidth - 20 + 'px';
+        iframe.style.height = adjustedHeight + 'px'; // 根据需要调整高度
+    }
+    
+    // 页面加载完成后调整iframe大小
+    window.onload = function() {
+      document.documentElement.scrollTop=0;
+      resizeIframe();
+    };
+  </script>
 </body>
 </html>
