@@ -48,12 +48,13 @@
       }
 
      
-function resizeIframe(iframe) {
-  var iframeBody = iframe.contentDocument || iframe.contentWindow.document;
-  var html = iframeBody.documentElement.outerHTML;
-  var body = iframeBody.body;
-  var contentHeight = body.scrollHeight;
-  iframe.height = contentHeight + "px";
+    function resizeIframe(iframe) {
+      var iframeBody = iframe.contentDocument || iframe.contentWindow.document;
+      var html = iframeBody.documentElement.outerHTML;
+      var body = iframeBody.body;
+      var contentHeight = body.scrollHeight;
+      iframe.height = contentHeight + "px";
+    }
 
 
   </script>
