@@ -19,8 +19,35 @@
 
 <body>
   <div id="container">
-    <iframe id="myframe" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3AvYy8xOTRmYWFmNDBjZTVkNzcxL0VTS0NVcnlVRWJCSmpzSXI1VERfa1ZvQkk5YjBZMWNEVmVWdjhYUEtCRUY1YUE_ZT14ZndQN2c.ppt" width="100%" height="1024px"></iframe>
+    <iframe id="myframe"  frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3AvYy8xOTRmYWFmNDBjZTVkNzcxL0VTS0NVcnlVRWJCSmpzSXI1VERfa1ZvQkk5YjBZMWNEVmVWdjhYUEtCRUY1YUE_ZT14ZndQN2c.ppt" width="100%" height="1024px"></iframe>
 
   </div>
+
+  
+  <script>
+     
+    function resizeIframe() {
+      var iframe = document.getElementById('myframe');
+      var viewportWidth = window.innerWidth;
+      var viewportHeight = window.innerHeight;
+      
+      // 减去一些边距或其他元素的高度以适应内容
+      var adjustedHeight = viewportHeight + 50; // 例如，减去50px的边距
+      
+      iframe.style.width = viewportWidth - 20 + 'px';
+      iframe.style.height = adjustedHeight + 'px'; // 根据需要调整高度
+  }
+  
+  // 页面加载完成后调整iframe大小
+  window.onload = function() {
+    document.documentElement.scrollTop=0;
+    resizeIframe();
+  };
+  
+  // 窗口大小改变时也调整iframe大小
+  window.onresize = function() {
+      resizeIframe();
+  };
+  </script>
 </body>
 </html>
