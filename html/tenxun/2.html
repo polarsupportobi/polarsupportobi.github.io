@@ -17,10 +17,27 @@
   <p id="text"></p>
 
 
-  <div id="container">
-    <iframe id="myframe" onload="resizeIframe(this)" frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="90%" height="1024px"></iframe>
+
+    <iframe id="myframe"  frameBorder="0" src="https://view.officeapps.live.com/op/embed.aspx?src=https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8xOTRmYWFmNDBjZTVkNzcxL0VjeUhuY0I4REpWSWtBQmNiQXR5ZEs4QjdwM1kwMHA5ZWg5WVhjdGNYd3RtYlE_ZT1SOHhHUk0.xls" width="90%" height="500px"></iframe>
 
 
+
+    <script>
+    // 设置iframe大小的函数
+  function resizeIframe() {
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var iframe = document.getElementById('myframe');
+    iframe.style.width = width *0.98+ 'px';
+    iframe.style.height = height + 'px';
+  }
+
+// 页面加载时调整iframe大小
+window.onload = resizeIframe;
+
+// 窗口大小改变时调整iframe大小
+window.onresize = resizeIframe;
+    </script>
       
   <script>
     
@@ -47,17 +64,8 @@
           p.textContent = 'PC端'
       }
 
-     
-    function resizeIframe(iframe) {
-      var iframeBody = iframe.contentDocument || iframe.contentWindow.document;
-      var html = iframeBody.documentElement.outerHTML;
-      var body = iframeBody.body;
-      var contentHeight = body.scrollHeight;
-      iframe.height = contentHeight + "px";
-    }
-
+   
 
   </script>
-  </div>
 </body>
 </html>
